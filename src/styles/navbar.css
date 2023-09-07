@@ -1,0 +1,69 @@
+.sidebar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2%;
+    border: 2px solid black;
+    height: 100vh;
+    width: 15vw;
+}
+
+.user-overview{
+    display:flex;
+    align-items: center;
+    gap: 2px;
+    width: 100%;
+}
+
+.profile-pic{
+    height: 40px;
+    width: 40px;
+}
+
+.date-selector-icon{
+    width: 15px;
+    height: 15px;
+}
+
+.date-selector-sidebar{
+    display: flex;
+    flex-direction: column;   
+    justify-content: center;
+    gap: 5%;
+    width: 100%;
+}
+
+.date-selector-individual{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    border: 1px solid green;
+}
+
+.projects-selector-sidebar{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-container-title{
+    display:flex;
+    justify-content: space-between;
+}
+
+.project-container-title span{
+    text-align: center;
+    font-weight: 900;
+    font-size: 24px;
+}
+
+.projects-container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.projects-container span{
+    cursor: pointer;
+}

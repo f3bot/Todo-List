@@ -1,0 +1,16 @@
+.main-content{
+    width: 85vw !important;
+}
+
+.delete-btn{
+    cursor: pointer;
+    width: 25px;
+    height: 25px;
+}
+
+.navigation-container {
+    display: flex;
+    align-items: center;
+    border: 1px solid black;
+    width: 20%;
+}
