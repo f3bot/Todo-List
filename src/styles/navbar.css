@@ -3,47 +3,105 @@
     flex-direction: column;
     align-items: center;
     gap: 2%;
-    border: 2px solid black;
     height: 100vh;
-    width: 15vw;
+    width: 13vw;
+    border-radius: 55px;
+    padding-top: 25px;
+    padding-left: 25px;
+    padding-right: 25px;
+    
 }
 
 .user-overview{
     display:flex;
     align-items: center;
-    gap: 2px;
+    gap: 15px;
     width: 100%;
+    padding-bottom: 25px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.36)
+}
+
+.user-overview div{
+    display: flex;
+    flex-direction: column;
+}
+
+.user-overview span{
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.user-overview p{
+    color: rgb(81, 81, 81);
+    font-size: 14px;
+    margin: 0 !important;
+    padding: 0 !important; 
 }
 
 .profile-pic{
-    height: 40px;
-    width: 40px;
-}
-
-.date-selector-icon{
-    width: 15px;
-    height: 15px;
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    -webkit-box-shadow: 0px 0px 14px -7px rgba(0, 0, 0, 1);
+    -moz-box-shadow: 0px 0px 14px -7px rgba(0, 0, 0, 1);
+    box-shadow: 0px 0px 14px -7px rgba(0, 0, 0, 1);
 }
 
 .date-selector-sidebar{
     display: flex;
     flex-direction: column;   
-    justify-content: center;
     gap: 5%;
     width: 100%;
+
+}
+
+.date-selector-sidebar span{
+    font-size:16px ;
+}
+
+.date-selector-sidebar p{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 2vh;
+    width: 2vh;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.25);
 }
 
 .date-selector-individual{
     display: flex;
     align-items: center;
+    justify-content: flex-start;
+    gap: 0.75vw;
     cursor: pointer;
-    border: 1px solid green;
+    padding-top: 4%;
+    padding-bottom: 4%;
+}
+
+.date-selector-individual span{
+    font-size: 1.15rem;
+}
+
+.date-selector-individual img{
+    height: 1.15rem;
+    width: 1.15em;
 }
 
 .projects-selector-sidebar{
     width: 100%;
     display: flex;
     flex-direction: column;
+    padding-top: .75rem;
+
+}
+
+.projects-selector-sidebar button{
+    background: none;
+    border: none;
+    font-size: 22px;
+    color: rgba(0, 0, 0, 0.507);
+    cursor: pointer;
 }
 
 .project-container-title{
@@ -54,7 +112,7 @@
 .project-container-title span{
     text-align: center;
     font-weight: 900;
-    font-size: 24px;
+    font-size: 22px;
 }
 
 .projects-container{
@@ -62,8 +120,96 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
+    padding-top: 1rem;
 }
 
 .projects-container span{
     cursor: pointer;
+    font-size: 1.15rem;
+}
+
+.projects-selector-sidebar button:hover{
+    transform: scale(1.5);
+    transition: 0.2s;
+}
+
+.projects-selector-sidebar button:not(:hover){
+    transform: scale(1.0);
+    transition: 0.2s;
+}
+
+.projects-container span:hover{
+    background-color: #f0f0f0;
+    transition: ease 0.5s;
+}
+
+.projects-container span:not(:hover){
+    background-color: #fff;
+    transition: ease 0.5s;
+}
+
+.date-selector-individual:hover{
+    background-color: #f0f0f0;
+    transition: ease 0.5s;
+}
+
+.date-selector-individual:not(:hover){
+    background-color: #fff;
+    transition: ease 0.5s;
+}
+
+
+/*Form*/
+
+.form-container{
+    height: 25vh;
+    width: 32vw;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+form{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.close-btn-container{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.close-btn-container button{
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.input-container{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: 10vh;
+}
+
+.input-container input{
+    height: 10vh;
+    width: 100%;
+}
+
+.submit-btn-container{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.submit-btn-container input{
+    height: 5vh;
+    background-color: rgb(31, 88, 203);
+    font-size: 48px;
+    color: white;
+    border-radius: 25px;
 }

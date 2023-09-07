@@ -24,8 +24,15 @@ const generateProfileUserDiv = (parent) =>{
     pfp.classList.add('profile-pic')
     pfp.src = '../src/assets/iar.jpg'
 
-    const nameContainer = document.createElement('span');
-    nameContainer.textContent = 'Michał'
+    const nameContainer = document.createElement('div');
+    const spanOne = document.createElement('span');
+    const pTwo = document.createElement('p')
+
+    spanOne.textContent = 'Michał'
+    pTwo.textContent = 'Free Account'
+
+    nameContainer.appendChild(spanOne);
+    nameContainer.appendChild(pTwo)
 
     container.appendChild(pfp);
     container.appendChild(nameContainer)
@@ -37,9 +44,9 @@ const generateDateSelection = (parent) =>{
     const container = document.createElement('div');
     container.classList.add('date-selector-sidebar')
 
-    generateSelector(container,'../src/assets/iar.jpg','Today')
-    generateSelector(container,'../src/assets/iar.jpg','Next 7 Days')
-    generateSelector(container,'../src/assets/iar.jpg','All Tasks')
+    generateSelector(container,'../src/assets/attention.svg','Today')
+    generateSelector(container,'../src/assets/calendar.svg','Next 7 Days')
+    generateSelector(container,'../src/assets/calendar.svg','All My Tasks')
 
     parent.appendChild(container);
 }
@@ -55,14 +62,11 @@ const generateSelector = ( parent, src, content ) =>{
     const span = document.createElement('span');
     span.textContent = content
 
-    const counter = document.createElement('p');
-    counter.classList.add('counter');
-    counter.textContent = '1'
+
 
 
     container.appendChild(ico);
-    container.appendChild(span);
-    container.appendChild(counter);
+    container.appendChild(span)
 
     parent.appendChild(container);
 
@@ -124,11 +128,14 @@ const createProjectForm = (parent) =>{
     const closeBtn = document.createElement('button');
     closeBtn.textContent = 'X'
 
+    closeContainer.classList.add('close-btn-container')
+
     closeBtn.addEventListener('click', (e) =>{
         e.preventDefault();
     })
 
     const inputContainer = document.createElement('div');
+    inputContainer.classList.add('input-container')
     const titleInput = document.createElement('input');
     titleInput.type = 'text';
     titleInput.placeholder = "What you gon' do?"
@@ -138,6 +145,7 @@ const createProjectForm = (parent) =>{
     })
 
     const submitContainer = document.createElement('div');
+    submitContainer.classList.add('submit-btn-container')
     const submit = document.createElement('input')
     submit.type = 'submit';
     submit.value = 'Continue'

@@ -15,6 +15,12 @@ const generateMainNavbar = (parent) =>{
     const container = document.createElement('div');
     container.classList.add('navigation-container');
 
+    const spanContainer = document.createElement('div');
+
+    
+    const spanIcon = document.createElement('img');
+    spanIcon.src = '../src/assets/attention.svg'
+    spanIcon.classList.add('main-navigator-icon')
     const spanDescription = document.createElement('span');
     spanDescription.classList.add('main-navigator');
     spanDescription.textContent = 'All Tasks'
@@ -26,12 +32,17 @@ const generateMainNavbar = (parent) =>{
     const label = document.createElement('label')
     label.classList.add('label-delete')
 
-    deleteBtn.src = '../src/assets/bin.png'
+    deleteBtn.src = '../src/assets/delete.svg'
 
     buttonContainer.appendChild(deleteBtn);
     buttonContainer.appendChild(label);
 
-    container.appendChild(spanDescription);
+    spanContainer.classList.add('navigation-small-container')
+
+    spanContainer.appendChild(spanIcon);
+    spanContainer.appendChild(spanDescription)
+
+    container.appendChild(spanContainer);
 
     container.appendChild(buttonContainer);
 
