@@ -1,0 +1,4 @@
+let allTasks = [];
+
+
+export {allTasks};

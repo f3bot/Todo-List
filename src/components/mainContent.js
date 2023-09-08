@@ -5,8 +5,15 @@ const generateMainContent = ( ) =>{
     generateMainNavbar(main);
 
 
+
+
     document.body.appendChild(main);
 
+
+    const taskContainerDiv = document.createElement('div'); //Div that the tasks are rendered in
+    generateTaskDiv(taskContainerDiv);
+
+    main.appendChild(taskContainerDiv);
 }
 
 
@@ -23,9 +30,10 @@ const generateMainNavbar = (parent) =>{
     spanIcon.classList.add('main-navigator-icon')
     const spanDescription = document.createElement('span');
     spanDescription.classList.add('main-navigator');
-    spanDescription.textContent = 'All Tasks'
+    spanDescription.textContent = 'ABC'
 
     const buttonContainer = document.createElement('div');
+    buttonContainer.classList.add('delete-btn-container');
 
     const deleteBtn = document.createElement('img');
     deleteBtn.classList.add('delete-btn')
@@ -48,6 +56,33 @@ const generateMainNavbar = (parent) =>{
 
     parent.appendChild(container);
     
+}
+
+const generateTaskDiv = (parent) =>{
+    const leftContainer = document.createElement('div');
+    leftContainer.classList.add('render-tasks-container');
+
+    const taskHolderDiv = document.createElement('div');
+    taskHolderDiv.classList.add('task-renderer');
+
+    const taskCreatorDiv = document.createElement('div');
+    taskCreatorDiv.classList.add('task-creator-div');
+    const form = document.createElement('form');
+    const input = document.createElement('input')
+    input.type = 'text';
+    input.placeholder = '+ Add task';
+    input.classList.add('task-title-input')
+
+    form.appendChild(input);
+    form.classList.add('submit-task-form')
+
+    taskCreatorDiv.appendChild(form);
+
+    leftContainer.appendChild(taskHolderDiv)
+    leftContainer.appendChild(taskCreatorDiv);
+
+    parent.appendChild(leftContainer);
+
 }
 
 export{generateMainContent}

@@ -1,4 +1,5 @@
-import { projectArray } from "../classes/project";
+import { project } from "../classes/project";
+import { projectArray } from "../variables/projectArray";
 import { createOverlay } from "./miscellaneous/overlay";
 
 const generateSidebar = () => {
@@ -90,7 +91,7 @@ const generateProjectSelector = (parent ) =>{
 
     projectArray.forEach(project =>{
         const span = document.createElement('span');
-        span.textContent = project;
+        span.textContent = project.title;
         projectContainer.appendChild(span)
     })
 
@@ -126,12 +127,17 @@ const createProjectForm = (parent) =>{
 
     const closeContainer = document.createElement('div');
     const closeBtn = document.createElement('button');
-    closeBtn.textContent = 'X'
+    closeBtn.textContent = '✕'
 
     closeContainer.classList.add('close-btn-container')
 
     closeBtn.addEventListener('click', (e) =>{
         e.preventDefault();
+
+
+        const overlay = document.querySelector('.overlay');
+        formContainer.classList.toggle('visible')
+        overlay.classList.toggle('visible')
     })
 
     const inputContainer = document.createElement('div');
@@ -140,8 +146,13 @@ const createProjectForm = (parent) =>{
     titleInput.type = 'text';
     titleInput.placeholder = "What you gon' do?"
 
-    titleInput.addEventListener('submit', (e) =>{
-        e.preventDefault();
+
+    titleInput.addEventListener('keypress', (e) =>{
+        if(e.key === 'Enter'){
+            projectArray.push(new project(titleInput.value))
+            form.reset();
+            console.log(projectArray)
+        }
     })
 
     const submitContainer = document.createElement('div');
@@ -152,7 +163,15 @@ const createProjectForm = (parent) =>{
 
     submit.addEventListener('click', (e) =>{
         e.preventDefault();
+        formContainer.classList.toggle('visible');
+        const overlay = document.querySelector('.overlay');
+        overlay.classList.toggle('visible')
+
+        projectArray.push(new project(titleInput.value))
+
+        console.log(projectArray)
     })
+
 
     closeContainer.appendChild(closeBtn);
     inputContainer.appendChild(titleInput);
@@ -169,5 +188,8 @@ const createProjectForm = (parent) =>{
     formContainer.classList.add('form-container');
 }
 
+const createProjectSpan = () =>{
+    
+}
 
 export {generateSidebar}

@@ -1,6 +1,6 @@
 class task{
-    constructor(){
-        this.title = '';
+    constructor(titleValue){
+        this.title = titleValue;
         this.dueDate = '';
         this.description = '';
         this.priority = false;
@@ -23,3 +23,5 @@ class task{
 
 
 }
+
+export {task}

@@ -1,15 +1,8 @@
 .main-content{
     width:  87vw !important;
     background-image: url(../assets/main-bg.png);
-    background-size: 100vw;
-}
 
-.delete-btn{
-    cursor: pointer;
-    margin-right: 18px;
-    margin-top: 3px;
-    height: 24px !important;
-    width: 24px !important;
+    background-size: cover;
 }
 
 .navigation-container {
@@ -18,19 +11,32 @@
     align-items: center;
     justify-content: space-between; /* Center content vertically */
     width: 15%;
-    height: 40px;
-    border-radius: 25px;
-    font-size: 21px;
+    height: 2vw;
+    border-radius: 3vw;
+    font-size: 1vw;
     font-weight: bold;
     -webkit-box-shadow: 2px 7px 25px -9px rgba(0, 0, 0, 1);
     -moz-box-shadow: 2px 7px 25px -9px rgba(0, 0, 0, 1);
     box-shadow: 2px 7px 25px -9px rgba(0, 0, 0, 1);
 }
 
-.navigation-container img{
-    height: 18px;
-    width: 18px;
+.main-navigator-icon{
+    height: 1vw;
+    width: 1vw;
+    align-self: center;
+}
+
+.delete-btn-container{
+    margin-right: .5vw;
+    display: flex;
+    justify-content: center;
     align-items: center;
+}
+
+.delete-btn{
+    height: 1.25vw;
+    width: 1.25vw;
+    align-self: center;
 }
 
 .navigation-container span{
@@ -44,4 +50,25 @@
     gap: 12px;
     align-items: center;
     margin-left: 40px;
+}
+
+.render-tasks-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 5%;
+    max-width: 30%;
+    min-width: 30%;
+    height: 80vh;
+    background-color: #fff;
+    border: 1px solid red;
+}
+
+
+.task-renderer{
+    flex-grow: 1;
+}
+
+.task-creator-div input{
+    width: 100%;
 }
