@@ -1,5 +1,0 @@
-
-
-let projectArray = [];
-
-export {projectArray}
