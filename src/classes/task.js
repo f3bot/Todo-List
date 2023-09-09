@@ -4,24 +4,22 @@ class task{
         this.dueDate = '';
         this.description = '';
         this.priority = false;
-        this.todo = false;
-        this.doing = false;
-        this.done = false;
+        this.toDo = true;
+        this.subtasks = [];
+        this.notes = [];
     }
 
     markAsDone(){
-        this.done = true;
+        this.toDo = false;
     }
 
-    markAsDoing(){
-        this.doing = true;
+    fillWithSubtasks(){
+        this.subtasks.push('ABC');
+        this.subtasks.push('ABC');
+        this.subtasks.push('ABC');
+        this.subtasks.push('ABC');
+        this.subtasks.push('ABC');
     }
-
-    markAsTodo(){
-        this.todo = true;
-    }
-
-
 }
 
 export {task}

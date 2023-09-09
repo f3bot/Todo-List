@@ -1,4 +1,5 @@
 import { project } from "../classes/project";
+import { projectListener } from "../listeners/navbarListeners";
 import { projectArray } from "../variables/projectArray";
 import { createOverlay } from "./miscellaneous/overlay";
 
@@ -62,9 +63,7 @@ const generateSelector = ( parent, src, content ) =>{
 
     const span = document.createElement('span');
     span.textContent = content
-
-
-
+    span.classList.add('date-selector-span')
 
     container.appendChild(ico);
     container.appendChild(span)
@@ -88,12 +87,6 @@ const generateProjectSelector = (parent ) =>{
 
     const projectContainer = document.createElement('div');
     projectContainer.classList.add('projects-container')
-
-    projectArray.forEach(project =>{
-        const span = document.createElement('span');
-        span.textContent = project.title;
-        projectContainer.appendChild(span)
-    })
 
     container.appendChild(projectContainer)
     parent.appendChild(container);
@@ -150,6 +143,7 @@ const createProjectForm = (parent) =>{
     titleInput.addEventListener('keypress', (e) =>{
         if(e.key === 'Enter'){
             projectArray.push(new project(titleInput.value))
+            generateProjectSpan(titleInput.value)
             form.reset();
             console.log(projectArray)
         }
@@ -168,6 +162,7 @@ const createProjectForm = (parent) =>{
         overlay.classList.toggle('visible')
 
         projectArray.push(new project(titleInput.value))
+        generateProjectSpan(titleInput.value)
 
         console.log(projectArray)
     })
@@ -188,8 +183,16 @@ const createProjectForm = (parent) =>{
     formContainer.classList.add('form-container');
 }
 
-const createProjectSpan = () =>{
-    
+const generateProjectSpan = (content) =>{
+    const container = document.querySelector('.projects-container');
+
+    const span = document.createElement('span')
+    span.classList.add('project-span')
+    span.textContent = content;
+    projectListener(span);
+
+    container.appendChild(span);
+
 }
 
 export {generateSidebar}
