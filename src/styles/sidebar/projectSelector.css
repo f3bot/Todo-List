@@ -1,0 +1,87 @@
+.sidebar-project-selector{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 5%;
+
+}
+
+.sidebar-project-title{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sidebar-project-title button{
+    border-radius: 50%;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.sidebar-projects-container{
+    margin-top: 5%;
+    display: flex;
+    flex-direction: column;
+    gap: .4vw;
+}
+
+.sidebar-projects-container span{
+    cursor: pointer;
+}
+
+.form-container{
+    height: 15rem;
+    width: 35rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2; /* Place the centered div above the overlay */
+    background-color: white; /* Set the background color of the centered div */
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 4vw;
+}
+
+
+.form-close-btn-div{
+    width: 100%;
+    display: flex;
+    justify-content:flex-end ;
+}
+
+.form-close-btn-div button{
+    border: none;
+    background: none;
+}
+
+.form-add-project-btn-div{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.form-add-project-btn-div button{
+    width: 25%;
+    height: 100%;
+    background-color: #2063d7;
+    color: white;
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Adjust the opacity here (0.5 is semi-transparent) */
+    z-index: 1; /* Place the overlay above other content */
+}
+
+.visible{display: flex;}
