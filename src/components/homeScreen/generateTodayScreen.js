@@ -3,12 +3,15 @@ import { returnRandom } from "../../miscellaneous/getRandomNumber";
 
 const generateToday = ( ) =>{
     const container = document.createElement('div');
-    container.classList.add('today-conatienr')
+    container.classList.add('today-container');
 
-    generateNavbar(container);
-    displayTodayTasks(container);
+    const wrapper = document.createElement('div')
+    wrapper.classList.add('today-main-wrapper');
+
+    generateNavbar(wrapper);
+    displayTodayTasks(wrapper);
     
-
+    container.appendChild(wrapper)
     document.body.appendChild(container);
 
 
@@ -19,17 +22,20 @@ const generateNavbar = (parent) =>{
     let currentDate = new Date();
     let hour = currentDate.getHours();
     const div = document.createElement('div');
+    div.classList.add('today-welcome-div')
     const bigSpan = document.createElement('span');
     bigSpan.classList.add('today-span-hero');
 
 
-    if(hour < 12){
+    if(hour <= 12){
         bigSpan.textContent = 'Good Morning, Michał';       
-    }else if(hour > 12 && hour < 18){
+    }else if(hour >= 12 && hour <= 18){
         bigSpan.textContent = 'Good Afternoon, Michał';
-    }else if(hour > 18){
+    }else if(hour >= 18){
         bigSpan.textContent = 'Good Evening, Michał'
     }
+
+    console.log(hour)
 
     const smallSpan = document.createElement('span');
     smallSpan.classList.add('today-span-hero-2');
@@ -46,7 +52,7 @@ const generateNavbar = (parent) =>{
 
 const displayTodayTasks = (parent) =>{
     const dateDiv = document.createElement('div');
-    dateDiv.classList.add('Today-date-div');
+    dateDiv.classList.add('today-date-div');
 
     let currentDate = new Date();
 
@@ -78,6 +84,14 @@ const displayTodayTasks = (parent) =>{
 
 
     parent.appendChild(dateDiv)
+}
+
+const generateButton = (parent) =>{
+    const button = document.createElement("button");
+    button.classList.add('today-button');
+
+
+    parent.appendChild(button);
 }
 
 export{generateToday}
