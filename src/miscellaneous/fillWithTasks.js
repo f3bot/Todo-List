@@ -30,6 +30,12 @@ const fillWithTasks = () =>{
 
     }
 
+
+    projectArray[0].slaveTasks[2].subtasks.push('chuj');
+    projectArray[0].slaveTasks[2].subtasks.push('chuj 2');
+    projectArray[0].slaveTasks[2].subtasks.push('chuj 3');
+    projectArray[0].slaveTasks[2].subtasks.push('chuj 4');
+    projectArray[0].slaveTasks[2].subtasks.push('chuj 5');
     
 }
 

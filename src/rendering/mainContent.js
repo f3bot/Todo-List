@@ -10,10 +10,7 @@ const renderTasks = (item) =>{
 
     for(let i = 0; i < projectArray.length; i++){
         if(item.textContent == projectArray[i].title){
-            console.log(projectArray[i]);
-            console.log(projectArray[i].slaveTasks)
 
-            console.log("%%%%%%%%%%%")
 
             for(let j = 0; j < projectArray[i].slaveTasks.length; j++){
                 const div = document.createElement('div');
@@ -76,13 +73,5 @@ const renderNewlyCreatedTask = (parent, input) =>{
     input.value = '';
 }
 
-const renderSubtasks = (item) =>{
 
-
-}
-
-const renderNewlyCreatedSubtask = (item) =>{
-    
-}
-
-export{renderTasks, clearContainer, renderNewlyCreatedTask, renderSubtasks}
+export{renderTasks, clearContainer, renderNewlyCreatedTask}

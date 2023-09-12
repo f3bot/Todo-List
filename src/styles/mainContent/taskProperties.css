@@ -101,3 +101,7 @@
     background-color: #fff;
     border: none;
 }
+
+.not-visible{
+    display: none !important;
+}

@@ -19,6 +19,7 @@ const generateNavbar = (parent) =>{
     const leftDiv = document.createElement('div');
 
     const span = document.createElement('span')
+    span.classList.add('main-task-properties-nav')
     span.innerHTML = 'Projects &nbsp; > &nbsp; Personal'
 
     leftDiv.appendChild(span);

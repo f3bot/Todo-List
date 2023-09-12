@@ -1,3 +1,4 @@
+import { project } from "../classes/project";
 import { getCurrentProject } from "../miscellaneous/variables/currentProject";
 import { projectArray } from "../miscellaneous/variables/projectArray";
 
@@ -9,6 +10,8 @@ const addNewSubtaskListener = () =>{
         e.preventDefault();
 
         const newDiv = document.createElement('div');
+        newDiv.classList.add('subtasks-title-div');
+
         const checkbox = document.createElement('input');
         checkbox.type = 'checkbox';
         checkbox.checked = false;
@@ -20,16 +23,6 @@ const addNewSubtaskListener = () =>{
         newDiv.appendChild(checkbox);
         newDiv.appendChild(input);
 
-        for(let i = 0; i < projectArray.length; i++){
-            if(getCurrentProject() == projectArray[i].title){
-                for(let j = 0; j < projectArray[i].slaveTasks.length; j++){
-                    if(projectArray[i].slaveTasks[j].title == 'Send out meeting invitations'){
-                        console.log("Task found or something can push now")
-                    }
-                }
-            }
-        }
-
         container.appendChild(newDiv);
 
         input.focus();
@@ -37,12 +30,27 @@ const addNewSubtaskListener = () =>{
 }
 
 const addInputListener = (item, parent) =>{
+    const taskTitle = document.querySelector('.task-properties-title')
+
     item.addEventListener('keypress', (e) =>{
         if(e.key == 'Enter'){
             if(item.value == '' || item.value == null){
                 parent.remove();
             }else{
-                console.log("a")
+                const span  =document.createElement('span');
+                span.textContent = item.value;
+
+                parent.replaceChild(span, item);
+
+                for(let i = 0; i < projectArray.length; i++){
+                    if(getCurrentProject() == projectArray[i].title){
+                        for(let j = 0; j < projectArray[i].slaveTasks.length; j++){
+                            if(projectArray[i].slaveTasks[j].title == taskTitle.textContent){
+                                projectArray[i].slaveTasks[j].subtasks.push(item.value);
+                            }
+                        }
+                    }
+                }
             }
         }
     })
@@ -52,6 +60,11 @@ const addInputListener = (item, parent) =>{
             parent.remove();
         }
     })
+
+}
+
+const addNotesListener = (item) =>{
+
 
 }
 

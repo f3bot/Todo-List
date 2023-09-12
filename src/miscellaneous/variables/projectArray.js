@@ -2,4 +2,8 @@ import { project } from "../../classes/project";
 
 let projectArray = [new project("Personal")];
 
-export {projectArray}
+const changeValue = (array) =>{
+    projectArray = array;
+}
+
+export {projectArray, changeValue}

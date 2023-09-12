@@ -3,6 +3,7 @@ import { renderNewlyCreatedProject } from "../components/sidebar/ProjectSelector
 import { getCurrentProject, setCurrentProject } from "../miscellaneous/variables/currentProject";
 import { projectArray } from "../miscellaneous/variables/projectArray";
 import { clearContainer, renderTasks } from "../rendering/mainContent";
+import { renderSubtasks } from "../rendering/taskProperties";
 
 const formListeners = () =>{
     const closeBtn = document.querySelector('.form-close-btn');
@@ -37,7 +38,7 @@ const formListeners = () =>{
 
                 projectArray.push(new project(formInput.value));
                 renderNewlyCreatedProject(formInput.value);
-
+                changePropertiesListenerNewlyAdded(document.querySelector('.sidebar-project-span'))
 
                 formInput.value = '';
             }
@@ -58,7 +59,7 @@ const changeViewListener = () =>{
             todayContainer.classList.add('not-visible')
             mainContent.classList.add('visible')
             clearContainer();
-            renderTasks(element)
+            renderTasks(element);
         });
     });
     
@@ -76,4 +77,50 @@ const changeViewListenerNewlyAdded = (item) =>{
         });
 }
 
-export{formListeners, changeViewListener,changeViewListenerNewlyAdded}
+const changePropertiesListenerNewlyAdded = (item) =>{
+
+    item.addEventListener('click', (e) =>{
+        for(let i = 0; i < projectArray.length; i++){
+            if(getCurrentProject() == projectArray[i].title){
+                if(projectArray[i].slaveTasks.length == 0){
+                    subtaskDiv.classList.add('not-visible');
+                }else{
+                    subtaskDiv.classList.remove('not-visible');
+                }
+            }
+        }
+    })
+}
+
+
+const changePropertiesListener = () =>{
+    const domElements = document.querySelectorAll('.sidebar-project-span');
+    const subtaskDiv = document.querySelector('.main-task-properties');
+    const subtaskTitle = document.querySelector('.task-properties-title');
+    const subtaskNavigator = document.querySelector('.main-task-properties-nav')
+    const mainNavigator = document.querySelector('.main-navigator-span');
+
+    domElements.forEach((element) =>{
+        element.addEventListener('click', () =>{
+            for(let i = 0; i < projectArray.length; i++){
+                if(getCurrentProject() == projectArray[i].title){
+                    if(projectArray[i].slaveTasks.length == 0){
+                        subtaskDiv.classList.add('not-visible');
+                        subtaskNavigator.textContent = `Projects > ${element.textContent}`
+                        mainNavigator.textContent = `${element.textContent}`;
+                    }else{
+                        subtaskDiv.classList.remove('not-visible');
+                        subtaskTitle.textContent = projectArray[i].slaveTasks[0].title;
+                        subtaskNavigator.textContent = `Projects > ${element.textContent}`
+                        mainNavigator.textContent = `${element.textContent}`;
+                        console.log("AAAAAAA")
+                        renderSubtasks(projectArray[i].slaveTasks[0]);
+                    }
+                }
+            }
+        })
+    })
+}
+
+
+export{formListeners, changeViewListener,changeViewListenerNewlyAdded,changePropertiesListenerNewlyAdded,changePropertiesListener}
