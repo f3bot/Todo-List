@@ -1,44 +1,38 @@
 .today-container{
-    display: none;  
-    align-items: center;
-    flex-direction: column;
-    gap:1vw;
-    width: 88vw;
-}
-
-
-
-.today-hero-container {
-    width: fit-content;
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    flex-grow: 1;
 }
 
+.today-main-wrapper{
+    margin-right: 25%;
+}
+
+.today-welcome-div{
+    margin-top: 3%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start !important;
+    
+}
 
 .today-span-hero{
+    font-weight: bold;
     font-size: 2rem;
-    font-weight: bold;
-}
-
-.today-span-hero span{
-    height: fit-content;
-    color: rgb(0, 70, 192);
-    font-size: 48px;
-    font-weight: bold;
 }
 
 .today-span-hero-2{
-    color: #9f9f9f;
-    font-size: 1.65rem;
-    font-weight: bold;
-    
+    font-size: 1.5rem;
+    color: #a8a8a8;
 }
 
 .today-date-div{
     display: flex;
-    gap: 1vw;
+    justify-content: flex-start;
 }
-
 
 .date-display-container{
     display: flex;
@@ -48,8 +42,8 @@
 }
 
 .date-display-day{
+    font-size: 2rem;
     font-weight: bold;
-    font-size: 1rem;
 }
 
 .date-display-number{
@@ -57,22 +51,5 @@
 }
 
 .date-display-month{
-    color: #9f9f9f;
-}
-
-.today-active-projects{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.today-active-projects span{
-    
     font-size: 1.5rem;
-}
-
-
-
-.not-visible{
-    display: none !important;
 }
