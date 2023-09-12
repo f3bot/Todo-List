@@ -1,3 +1,6 @@
+import { changeViewListenerNewlyAdded } from "../../listeners/sidebar";
+import { projectArray } from "../../miscellaneous/variables/projectArray";
+
 const generateProjectSelector = (parent) =>{
     const container = document.createElement('div');
     container.classList.add('sidebar-project-selector');
@@ -72,7 +75,11 @@ const renderNewlyCreatedProject = (value) =>{
     const container = document.querySelector('.sidebar-projects-container');
 
     const span = document.createElement('span');
+    span.classList.add('sidebar-project-span')
     span.textContent = value;
+    changeViewListenerNewlyAdded(span)
+
+    console.log(projectArray)
 
     container.appendChild(span)
 }

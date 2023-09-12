@@ -1,0 +1,78 @@
+.today-container{
+    display: none;  
+    align-items: center;
+    flex-direction: column;
+    gap:1vw;
+    width: 88vw;
+}
+
+
+
+.today-hero-container {
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.today-span-hero{
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.today-span-hero span{
+    height: fit-content;
+    color: rgb(0, 70, 192);
+    font-size: 48px;
+    font-weight: bold;
+}
+
+.today-span-hero-2{
+    color: #9f9f9f;
+    font-size: 1.65rem;
+    font-weight: bold;
+    
+}
+
+.today-date-div{
+    display: flex;
+    gap: 1vw;
+}
+
+
+.date-display-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.date-display-day{
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.date-display-number{
+    font-size: 2.5rem;
+}
+
+.date-display-month{
+    color: #9f9f9f;
+}
+
+.today-active-projects{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.today-active-projects span{
+    
+    font-size: 1.5rem;
+}
+
+
+
+.not-visible{
+    display: none !important;
+}

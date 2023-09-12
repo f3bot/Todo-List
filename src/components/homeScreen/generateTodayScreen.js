@@ -1,9 +1,10 @@
 import { format } from "date-fns";
 import { returnRandom } from "../../miscellaneous/getRandomNumber";
+import { projectArray } from "../../miscellaneous/variables/projectArray";
 
 const generateToday = ( ) =>{
     const container = document.createElement('div');
-    container.classList.add('today-conatienr')
+    container.classList.add('today-container')
 
     generateNavbar(container);
     displayTodayTasks(container);
@@ -19,15 +20,18 @@ const generateNavbar = (parent) =>{
     let currentDate = new Date();
     let hour = currentDate.getHours();
     const div = document.createElement('div');
+    div.classList.add('today-hero-container')
     const bigSpan = document.createElement('span');
     bigSpan.classList.add('today-span-hero');
+    const bigSpanEnding = document.createElement('span');
+    bigSpanEnding.textContent = '.'
 
 
     if(hour < 12){
         bigSpan.textContent = 'Good Morning, Michał';       
-    }else if(hour > 12 && hour < 18){
+    }else if(hour >= 12 && hour < 18){
         bigSpan.textContent = 'Good Afternoon, Michał';
-    }else if(hour > 18){
+    }else if(hour >= 18){
         bigSpan.textContent = 'Good Evening, Michał'
     }
 
@@ -38,6 +42,9 @@ const generateNavbar = (parent) =>{
 
     smallSpan.textContent = quotes[returnRandom()];
 
+    
+    bigSpan.appendChild(bigSpanEnding)
+
     div.appendChild(bigSpan);
     div.appendChild(smallSpan);
 
@@ -46,7 +53,7 @@ const generateNavbar = (parent) =>{
 
 const displayTodayTasks = (parent) =>{
     const dateDiv = document.createElement('div');
-    dateDiv.classList.add('Today-date-div');
+    dateDiv.classList.add('today-date-div');
 
     let currentDate = new Date();
 
@@ -75,8 +82,19 @@ const displayTodayTasks = (parent) =>{
 
     const rightDiv = document.createElement('div');
 
+    const projectCounterDiv = document.createElement('div');
+    const projectCounter = document.createElement('span');
+    projectCounter.textContent = projectArray.length
+    const projectCounterDesc = document.createElement('span');
+    projectCounterDesc.textContent = "Active Projects: "
 
+    console.log(projectArray.length)
 
+    rightDiv.classList.add('today-active-projects')
+    rightDiv.appendChild(projectCounterDesc);
+    rightDiv.appendChild(projectCounter);
+
+    dateDiv.appendChild(rightDiv)
     parent.appendChild(dateDiv)
 }
 

@@ -9,6 +9,7 @@ const renderSidebarProjects = () =>{
     for(let i = 0; i < projectArray.length; i++){
         const span = document.createElement('span')
         span.textContent = projectArray[i].title;
+        span.classList.add('sidebar-project-span')
 
         container.appendChild(span);
     }

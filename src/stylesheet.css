@@ -2,6 +2,11 @@
 @import url(../src/styles/sidebar/sidebar.css);
 @import url(../src/styles/sidebar//dateSelector.css);
 @import url(../src/styles//sidebar/projectSelector.css);
+@import url(../src/styles/homeScreen/homescreen.css);
+@import url(../src/styles/mainContent/mainContent.css);
+@import url(../src/styles/mainContent/navigator.css);
+@import url(../src/styles/mainContent/taskContainer.css);
+@import url(../src/styles/mainContent/taskProperties.css);
 
 *{
     margin: 0;

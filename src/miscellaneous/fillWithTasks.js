@@ -28,7 +28,6 @@ const fillWithTasks = () =>{
             projectArray[i].slaveTasks.push(new task(strings[j]));
         }
 
-        console.log(projectArray[i].slaveTasks)
     }
 
     

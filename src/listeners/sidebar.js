@@ -1,6 +1,8 @@
 import { project } from "../classes/project";
 import { renderNewlyCreatedProject } from "../components/sidebar/ProjectSelector";
+import { getCurrentProject, setCurrentProject } from "../miscellaneous/variables/currentProject";
 import { projectArray } from "../miscellaneous/variables/projectArray";
+import { clearContainer, renderTasks } from "../rendering/mainContent";
 
 const formListeners = () =>{
     const closeBtn = document.querySelector('.form-close-btn');
@@ -43,4 +45,35 @@ const formListeners = () =>{
     })
 }
 
-export{formListeners}
+const changeViewListener = () =>{
+    const todayContainer = document.querySelector('.today-container');
+    const mainContent = document.querySelector('.main-container');
+
+    const domElements = document.querySelectorAll('.sidebar-project-span');
+
+
+    domElements.forEach((element) => {
+        element.addEventListener('click', () => {
+            setCurrentProject(element.innerHTML)
+            todayContainer.classList.add('not-visible')
+            mainContent.classList.add('visible')
+            clearContainer();
+            renderTasks(element)
+        });
+    });
+    
+}
+
+const changeViewListenerNewlyAdded = (item) =>{
+    const todayContainer = document.querySelector('.today-container');
+    const mainContent = document.querySelector('.main-container');
+        item.addEventListener('click', () => {
+            todayContainer.classList.add('not-visible')
+            mainContent.classList.add('visible')
+            clearContainer();
+            renderTasks(item);
+            setCurrentProject(item.innerHTML);
+        });
+}
+
+export{formListeners, changeViewListener,changeViewListenerNewlyAdded}

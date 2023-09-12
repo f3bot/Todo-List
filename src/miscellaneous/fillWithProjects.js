@@ -9,7 +9,6 @@ const fillWithProjects = () =>{
         projectArray.push(new project(strings[i]));
     }
 
-    console.log(projectArray)
 }
 
 export{fillWithProjects}
