@@ -1,0 +1,55 @@
+.today-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    flex-grow: 1;
+}
+
+.today-main-wrapper{
+    margin-right: 25%;
+}
+
+.today-welcome-div{
+    margin-top: 3%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start !important;
+    
+}
+
+.today-span-hero{
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+.today-span-hero-2{
+    font-size: 1.5rem;
+    color: #a8a8a8;
+}
+
+.today-date-div{
+    display: flex;
+    justify-content: flex-start;
+}
+
+.date-display-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.date-display-day{
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.date-display-number{
+    font-size: 2.5rem;
+}
+
+.date-display-month{
+    font-size: 1.5rem;
+}
