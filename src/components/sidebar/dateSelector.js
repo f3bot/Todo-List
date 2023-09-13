@@ -2,9 +2,9 @@ const generateDateSelector = (parent) =>{
     const container = document.createElement('div');
     container.classList.add('sidebar-date-container');
 
-    const classlists = ['sidebar-today', 'sidebar-important', 'sidebar-all'];
-    const iconsSrc = ['../src/assets/attention.svg', '../src/assets/star.svg', '../src/assets/calendar.svg']
-    const strings = ['Today', 'Important', 'All Tasks'];
+    const classlists = ['sidebar-today', 'sidebar-important'];
+    const iconsSrc = ['../src/assets/attention.svg', '../src/assets/star.svg']
+    const strings = ['Today', 'Important'];
 
     for(let i = 0; i < strings.length; i++){
         const div = document.createElement('div');

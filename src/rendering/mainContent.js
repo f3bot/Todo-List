@@ -2,7 +2,8 @@ import { returnCurrentArrayIndex } from "../miscellaneous/returnArrayIndex"
 import { getCurrentProject } from "../miscellaneous/variables/currentProject";
 import { projectArray } from "../miscellaneous/variables/projectArray"
 import {task} from "../classes/task"
-import { addTaskDivListener } from "../listeners/taskContainer";
+import { addTaskDivListener, checkboxListener } from "../listeners/taskContainer";
+import { renderSubtasks } from "./taskProperties";
 
 const renderTasks = (item) =>{
     
@@ -15,22 +16,29 @@ const renderTasks = (item) =>{
             for(let j = 0; j < projectArray[i].slaveTasks.length; j++){
                 const div = document.createElement('div');
                 div.classList.add('task-div');
-                
+                if(projectArray[i].slaveTasks[j].done == true){
+                    div.classList.add('task-done')
+                }
+
                 const checkbox = document.createElement('input');
                 checkbox.type = 'checkbox';
                 checkbox.role = 'checkbox';
+
+                checkboxListener(checkbox);
+                
     
                 const span = document.createElement('span');
                 span.textContent = projectArray[i].slaveTasks[j].title
 
+                
 
                 div.appendChild(checkbox);
                 div.appendChild(span);
 
-                addTaskDivListener(span)
-
+                addTaskDivListener(span);
                 taskContaienr.appendChild(div);
             }
+            
         }
     }
 }
@@ -52,7 +60,8 @@ const renderNewlyCreatedTask = (parent, input) =>{
     const checkbox = document.createElement('input');
     checkbox.type = 'checkbox';
     checkbox.role = 'checkbox';
-
+    checkboxListener(checkbox)
+                
     const span = document.createElement('span');
     span.textContent = input.value
 
@@ -68,7 +77,7 @@ const renderNewlyCreatedTask = (parent, input) =>{
         }
     }
 
-    addTaskDivListener(div)
+    addTaskDivListener(div);
 
     input.value = '';
 }

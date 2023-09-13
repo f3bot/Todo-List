@@ -38,7 +38,7 @@ const formListeners = () =>{
 
                 projectArray.push(new project(formInput.value));
                 renderNewlyCreatedProject(formInput.value);
-                changePropertiesListenerNewlyAdded(document.querySelector('.sidebar-project-span'))
+
 
                 formInput.value = '';
             }
@@ -49,6 +49,9 @@ const formListeners = () =>{
 const changeViewListener = () =>{
     const todayContainer = document.querySelector('.today-container');
     const mainContent = document.querySelector('.main-container');
+    const mainNavigator = document.querySelector('.main-navigator-span');
+
+    
 
     const domElements = document.querySelectorAll('.sidebar-project-span');
 
@@ -78,14 +81,24 @@ const changeViewListenerNewlyAdded = (item) =>{
 }
 
 const changePropertiesListenerNewlyAdded = (item) =>{
+    const subtaskDiv = document.querySelector('.main-task-properties');
+    const subtaskTitle = document.querySelector('.task-properties-title');
+    const subtaskNavigator = document.querySelector('.main-task-properties-nav')
+    const mainNavigator = document.querySelector('.main-navigator-span');
 
     item.addEventListener('click', (e) =>{
         for(let i = 0; i < projectArray.length; i++){
             if(getCurrentProject() == projectArray[i].title){
                 if(projectArray[i].slaveTasks.length == 0){
                     subtaskDiv.classList.add('not-visible');
+                    subtaskNavigator.textContent = `Projects > ${item.textContent}`
+                    mainNavigator.textContent = `${item.textContent}`;
                 }else{
                     subtaskDiv.classList.remove('not-visible');
+                    subtaskTitle.textContent = projectArray[i].slaveTasks[0].title;
+                    subtaskNavigator.textContent = `Projects > ${item.textContent}`
+                    mainNavigator.textContent = `${item.textContent}`;
+                    renderSubtasks(projectArray[i].slaveTasks[0]);
                 }
             }
         }
@@ -113,7 +126,6 @@ const changePropertiesListener = () =>{
                         subtaskTitle.textContent = projectArray[i].slaveTasks[0].title;
                         subtaskNavigator.textContent = `Projects > ${element.textContent}`
                         mainNavigator.textContent = `${element.textContent}`;
-                        console.log("AAAAAAA")
                         renderSubtasks(projectArray[i].slaveTasks[0]);
                     }
                 }

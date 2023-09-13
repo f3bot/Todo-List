@@ -63,10 +63,24 @@ const addInputListener = (item, parent) =>{
 
 }
 
-const addNotesListener = (item) =>{
+const addNotesListener = () =>{
+    const textarea = document.querySelector('.task-properties-text-area');
+    const taskTitle = document.querySelector('.task-properties-title')
+    textarea.addEventListener('input', (e) =>{
+        for(let i = 0; i <projectArray.length; i++){
+            if(projectArray[i].title == getCurrentProject()){
+                for(let j = 0; j < projectArray[i].slaveTasks.length; j++){
+                    if(projectArray[i].slaveTasks[j].title == taskTitle.textContent){
+                        projectArray[i].slaveTasks[j].notes = e.target.value;
+                        console.log(projectArray[i].slaveTasks[j].notes)
+                    }
+                }
+            }
+        }
 
+    })
 
 }
 
 
-export {addNewSubtaskListener}
+export {addNewSubtaskListener, addNotesListener}

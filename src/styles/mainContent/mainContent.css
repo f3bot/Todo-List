@@ -1,5 +1,5 @@
 .main-container{
-    display: flex;
+    display: none;
     flex-direction: column;
     width: 88vw;
      background-image: url(../../assets/main-bg.png);

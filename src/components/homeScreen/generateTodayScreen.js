@@ -5,14 +5,18 @@ import { projectArray } from "../../miscellaneous/variables/projectArray";
 const generateToday = ( ) =>{
     const container = document.createElement('div');
     container.classList.add('today-container')
-
-    generateNavbar(container);
-    displayTodayTasks(container);
     
 
     document.body.appendChild(container);
 
 
+}
+
+const renderToday = () =>{
+
+    const container = document.querySelector('.today-container');
+    generateNavbar(container);
+    displayTodayTasks(container);
 }
 
 const generateNavbar = (parent) =>{
@@ -88,8 +92,6 @@ const displayTodayTasks = (parent) =>{
     const projectCounterDesc = document.createElement('span');
     projectCounterDesc.textContent = "Active Projects: "
 
-    console.log(projectArray.length)
-
     rightDiv.classList.add('today-active-projects')
     rightDiv.appendChild(projectCounterDesc);
     rightDiv.appendChild(projectCounter);
@@ -98,4 +100,12 @@ const displayTodayTasks = (parent) =>{
     parent.appendChild(dateDiv)
 }
 
-export{generateToday}
+const clearMainScreen = () =>{
+    const todayContainer = document.querySelector('.today-container');
+
+    while(todayContainer.firstChild){
+        todayContainer.removeChild(todayContainer.firstChild);
+    }
+}
+
+export{generateToday, clearMainScreen, renderToday}

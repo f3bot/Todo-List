@@ -5,7 +5,6 @@ import { projectArray } from "../miscellaneous/variables/projectArray"
 const renderSidebarProjects = () =>{
     const projectContainer = document.querySelector('.sidebar-project-selector');
 
-    console.log(projectArray)
 
     const container = document.createElement('div');
     container.classList.add('sidebar-projects-container')

@@ -105,3 +105,27 @@
 .not-visible{
     display: none !important;
 }
+
+.task-done{
+    position: relative;
+}
+
+.task-done::before{
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    animation: lineAnimation .3s linear forwards;
+    border-top: 1px solid black;
+    
+}
+
+@keyframes lineAnimation {
+    0% {
+      width: 0%;
+    }
+    100% {
+      width: 100%;
+    }
+  }
