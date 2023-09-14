@@ -11,6 +11,7 @@ const formListeners = () =>{
     const formContainer = document.querySelector('.form-container');
     const addProjectButton = document.querySelector('.add-project-btn');
     const formInput = document.querySelector('.form-add-project-input');
+    const formAddBtn = document.querySelector('.form-add-project-btn');
 
     addProjectButton.addEventListener('click', (e) =>{
         formContainer.classList.toggle('visible');
@@ -44,13 +45,22 @@ const formListeners = () =>{
             }
         }
     })
+
+    formAddBtn.addEventListener('click', (e) =>{
+        overlay.classList.toggle('visible');
+        formContainer.classList.toggle('visible');
+
+        projectArray.push(new project(formInput.value));
+        renderNewlyCreatedProject(formInput.value);
+    })
+
 }
 
 const changeViewListener = () =>{
     const todayContainer = document.querySelector('.today-container');
     const mainContent = document.querySelector('.main-container');
     const mainNavigator = document.querySelector('.main-navigator-span');
-
+    const button = document.querySelector('.main-navigator-delete');
     
 
     const domElements = document.querySelectorAll('.sidebar-project-span');
@@ -58,11 +68,16 @@ const changeViewListener = () =>{
 
     domElements.forEach((element) => {
         element.addEventListener('click', () => {
+
+            const animationButton = document.querySelector('.today-next-button');
             setCurrentProject(element.innerHTML)
             todayContainer.classList.add('not-visible')
             mainContent.classList.add('visible')
+            //animationButton.classList.add('not-visible');
             clearContainer();
+            button.classList.remove('not-visible');
             renderTasks(element);
+            animationButton.classList.add('ihatethisproject');
         });
     });
     
@@ -72,11 +87,17 @@ const changeViewListenerNewlyAdded = (item) =>{
     const todayContainer = document.querySelector('.today-container');
     const mainContent = document.querySelector('.main-container');
         item.addEventListener('click', () => {
+
+            const animationButton = document.querySelector('.today-next-button');
             todayContainer.classList.add('not-visible')
             mainContent.classList.add('visible')
+            //animationButton.classList.add('not-visible');
             clearContainer();
             renderTasks(item);
             setCurrentProject(item.innerHTML);
+
+            animationButton.classList.add('ihatethisproject');
+
         });
 }
 

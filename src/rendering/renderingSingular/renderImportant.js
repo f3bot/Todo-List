@@ -24,6 +24,12 @@ const prioTaskCounter = () =>{
 
 const renderImportant = () =>{
     const mainContainer = document.querySelector('.main-task-container-renderer');
+    const mainNavSpan = document.querySelector('.main-navigator-span');
+    mainNavSpan.textContent = 'Important';
+    const mainTaskProperties = document.querySelector('.main-task-properties');
+    mainTaskProperties.classList.add('not-visible');
+    const mainNavigator = document.querySelector('.main-navigator-delete');
+    mainNavigator.classList.add('not-visible');
 
     clearContainer();
 

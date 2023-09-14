@@ -25,12 +25,8 @@ const generateButtons = (parent) =>{
     btnDelete.src = '../src/assets/delete2.svg';
     btnDelete.classList.add('main-navigator-delete');
 
-    const btnPrint = document.createElement('img');
-    btnPrint.src = '../src/assets/print.svg';
-    btnPrint.classList.add('main-navigator-print');
 
     buttonContainer.appendChild(btnDelete);
-    buttonContainer.appendChild(btnPrint);
 
     parent.appendChild(buttonContainer);
 }

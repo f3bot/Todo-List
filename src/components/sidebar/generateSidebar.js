@@ -1,5 +1,6 @@
 import { generateProjectSelector } from "./ProjectSelector";
 import { generateDateSelector } from "./dateSelector";
+import {createHamburgerMenu } from "./hamburgerIcon";
 import { generateUserOverview } from "./userOverview";
 
 const generateSidebar = () => {

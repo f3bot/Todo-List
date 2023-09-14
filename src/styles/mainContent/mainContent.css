@@ -3,7 +3,7 @@
     flex-direction: column;
     width: 88vw;
      background-image: url(../../assets/main-bg.png);
-    background-size: 125%;
+    background-size: cover;
     background-position: -200px 0;
     
 }

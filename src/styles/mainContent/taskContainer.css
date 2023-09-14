@@ -1,11 +1,12 @@
 .main-task-container{
     display: flex;
     flex-direction: column;
-    height: 80%;
-    width: 30%;
+    height: 85%;
+    width: 35%;
     margin-top: 3%;
     margin-left: 2%;
     background-color: white;
+    border-radius: 25px;
 }
 
 .main-task-input-div{

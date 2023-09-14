@@ -7,12 +7,19 @@
 @import url(../src/styles/mainContent/navigator.css);
 @import url(../src/styles/mainContent/taskContainer.css);
 @import url(../src/styles/mainContent/taskProperties.css);
+@import url(../src/styles/responsiveness/992px.css);
+@import url(../src/styles/responsiveness/1300px.css);
+@import url(../src/styles/responsiveness/700px.css);
+@import url(../src/styles/responsiveness/500px.css);
+@import url(../src/styles/responsiveness/400px.css);
+@import url(../src/styles/responsiveness/400px.css);
+@import url(../src/styles/responsiveness/350px.css);
 
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Inter', sans-serif;
 }
 
 body{

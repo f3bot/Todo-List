@@ -1,0 +1,19 @@
+
+@media screen and (max-width: 1300px){
+    .sidebar{
+        width: 20vw;
+    }
+
+    .sidebar-user-overview img{
+        width: 3.25vw;
+        height: 3.25vw;
+    }
+
+    .main-task-container{
+        width: 40%;
+    }
+
+    .main-task-properties{
+        width: 40%;
+    }
+}

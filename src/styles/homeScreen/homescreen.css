@@ -1,14 +1,17 @@
 .today-container{
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
     align-items: center;
-
+    gap: 2vw;
+    margin-top: 25px;
     flex-grow: 1;
 }
 
-.today-main-wrapper{
-    margin-right: 25%;
+
+.today-hero-container{
+    display: flex;
+    flex-direction: column;
+    width: 35%;
 }
 
 .today-welcome-div{
@@ -19,19 +22,32 @@
     
 }
 
+.today-active-projects span{
+    font-size: 1rem;
+}
+
 .today-span-hero{
     font-weight: bold;
-    font-size: 2rem;
+
+    font-size: 1.65rem;
+}
+
+.today-span-hero span{
+    color: #0073ff;
 }
 
 .today-span-hero-2{
-    font-size: 1.5rem;
-    color: #a8a8a8;
+    font-weight: bold;
+    font-size: 1.15rem;
+    color: #cacaca;
 }
 
 .today-date-div{
     display: flex;
     justify-content: flex-start;
+    gap: 2vw;
+    align-items: center;
+    width: 35%;
 }
 
 .date-display-container{
@@ -42,14 +58,51 @@
 }
 
 .date-display-day{
-    font-size: 2rem;
-    font-weight: bold;
+    font-size: 1.25rem;
+    color: #909090;
 }
 
 .date-display-number{
-    font-size: 2.5rem;
+    font-size: 2.75rem;
+    font-weight: bold;
 }
 
 .date-display-month{
-    font-size: 1.5rem;
+    font-size: 0.75rem;
+    color: #cfcfcf;
+}
+
+.today-next-button{
+    cursor: pointer;
+    position: fixed;
+    bottom: -25%;
+    left: 45%;
+    width: 25rem;
+    height: 25rem;
+    background-color: rgb(0, 115, 255);
+    border-radius: 50%;
+}
+
+.today-next-button:hover{
+    background-color: rgb(0, 100, 255);
+}
+
+.animation-active{
+    transform: scale(12);
+    transition: 0.7s;
+}
+
+.animation-not-active{
+    transform: scale(0.001);
+    transition: 0.7s;
+}
+
+.main-animation{
+    opacity: 0.5;
+    transition: opacity 2.5s;
+}
+
+.ihatethisproject{
+    left: -100%;
+    bottom: -100%;
 }

@@ -1,4 +1,5 @@
 import { project } from "../classes/project";
+import { checkboxListener } from "../components/mainContent/taskProperties";
 import { getCurrentProject } from "../miscellaneous/variables/currentProject";
 import { projectArray } from "../miscellaneous/variables/projectArray";
 
@@ -15,6 +16,7 @@ const addNewSubtaskListener = () =>{
         const checkbox = document.createElement('input');
         checkbox.type = 'checkbox';
         checkbox.checked = false;
+        checkboxListener(checkbox);
 
         const input = document.createElement('input');
         input.type = 'text';

@@ -9,13 +9,13 @@
 }
 
 .sidebar-user-overview img{
-    width: 3vw;
-    height: 3vw;
+    width: 2.75vw;
+    height: 2.75vw;
     border-radius: 50%;
     border: 1px solid #afafaf;   
     -webkit-box-shadow: 0px 0px 24px -10px rgba(66, 68, 90, 1);
--moz-box-shadow: 0px 0px 24px -10px rgba(66, 68, 90, 1);
-box-shadow: 0px 0px 24px -10px rgba(66, 68, 90, 1);
+    -moz-box-shadow: 0px 0px 24px -10px rgba(66, 68, 90, 1);
+    box-shadow: 0px 0px 24px -10px rgba(66, 68, 90, 1);
 }
 
 .sidebar-user-overview span{
@@ -32,4 +32,11 @@ box-shadow: 0px 0px 24px -10px rgba(66, 68, 90, 1);
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
+
+}
+
+.sidebar-user-overview input{
+    width: 60%;
+    outline: none;
+    border: 1px solid #c3c3c3;
 }

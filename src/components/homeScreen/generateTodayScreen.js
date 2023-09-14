@@ -1,6 +1,7 @@
 import { format } from "date-fns";
 import { returnRandom } from "../../miscellaneous/getRandomNumber";
 import { projectArray } from "../../miscellaneous/variables/projectArray";
+import { generateButtonListener, generateButtonListenerNotOnLoad } from "../../listeners/today";
 
 const generateToday = ( ) =>{
     const container = document.createElement('div');
@@ -17,6 +18,8 @@ const renderToday = () =>{
     const container = document.querySelector('.today-container');
     generateNavbar(container);
     displayTodayTasks(container);
+    generateButton();
+    generateButtonListener();
 }
 
 const generateNavbar = (parent) =>{
@@ -42,7 +45,24 @@ const generateNavbar = (parent) =>{
     const smallSpan = document.createElement('span');
     smallSpan.classList.add('today-span-hero-2');
     
-    const quotes = ["Seize the day!", "Your actions matter.", "Dream big!", "Make it happen!", "Believe in yourself.", "Inspire others.", "Create your path.", "Shine bright!", "Stay resilient.", "Embrace each moment.", "Be unstoppable!", "Chase your dreams.", "Spread joy.", "Make it count.", "You've got this!", "Choose happiness.", "Stay determined.", "Pursue greatness.", "Find your passion.", "Live with purpose."]
+    const quotes =     ["Believe in yourself, for your potential is limitless.",
+    "Every small step you take brings you closer to your dreams.",
+    "Your determination is the key to unlocking your greatest achievements.",
+    "The only way to do great work is to love what you do.",
+    "Embrace challenges, for they are the stepping stones to success.",
+    "Don't wait for the perfect moment; take the moment and make it perfect.",
+    "You are the author of your own story; make it a bestseller.",
+    "Set your goals high and don't stop until you get there.",
+    "The road to success is paved with hard work and persistence.",
+    "No one ever achieved greatness by staying in their comfort zone.",
+    "The only limits that exist are the ones you place on yourself.",
+    "Your past does not define your future; your actions do.",
+    "Failure is not falling down but refusing to get up.",
+    "Success is the sum of small efforts repeated day in and day out.",
+    "Stay focused on your goals; distractions are just detours.",
+    "In every adversity lies the seed of an equal or greater opportunity.",
+    "Your attitude determines your direction; choose positivity.",
+    "Don't be afraid to chase your dreams; they know the way." ]
 
     smallSpan.textContent = quotes[returnRandom()];
 
@@ -61,8 +81,8 @@ const displayTodayTasks = (parent) =>{
 
     let currentDate = new Date();
 
-    let daysOfWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
-    let months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+    let daysOfWeek = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT', 'SUN'];
+    let months = ['JANUARY', 'FEBRUARY', 'MARCH', 'APRIL', 'MAY', 'JUNE', 'JULY', 'AUGUST', 'SEPTEMBER', 'OCTOBER', 'NOVEMBER', 'DECEMBER'];
     
     let dayOfWeek = daysOfWeek[currentDate.getDay()];
     let monthName = months[currentDate.getMonth()];
@@ -90,7 +110,7 @@ const displayTodayTasks = (parent) =>{
     const projectCounter = document.createElement('span');
     projectCounter.textContent = projectArray.length
     const projectCounterDesc = document.createElement('span');
-    projectCounterDesc.textContent = "Active Projects: "
+    projectCounterDesc.textContent = "ACTIVE PROJECTS: "
 
     rightDiv.classList.add('today-active-projects')
     rightDiv.appendChild(projectCounterDesc);
@@ -100,12 +120,25 @@ const displayTodayTasks = (parent) =>{
     parent.appendChild(dateDiv)
 }
 
+const generateButton = () =>{
+    const div = document.createElement('div');
+    div.classList.add('today-next-button');
+
+    document.body.appendChild(div);
+}
+
+
+
+
 const clearMainScreen = () =>{
     const todayContainer = document.querySelector('.today-container');
+    const todayButton = document.querySelector('.today-next-button');
 
     while(todayContainer.firstChild){
         todayContainer.removeChild(todayContainer.firstChild);
     }
+
+    todayButton.remove();
 }
 
 export{generateToday, clearMainScreen, renderToday}

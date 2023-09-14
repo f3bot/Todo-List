@@ -1,3 +1,4 @@
+import { checkboxListener } from "../components/mainContent/taskProperties";
 import { getCurrentProject } from "../miscellaneous/variables/currentProject";
 import { projectArray } from "../miscellaneous/variables/projectArray";
 
@@ -20,6 +21,7 @@ const renderSubtasks = (item) =>{
                         div.classList.add('subtasks-title-div');
 
                         const checkbox = document.createElement('input');
+                        checkboxListener(checkbox);
                         checkbox.type = 'checkbox';
 
 
@@ -81,4 +83,4 @@ if(taskRenderer.childNodes.length <= 1){
 }
 }
 
-export{renderSubtasks, resetView}
+export{renderSubtasks, resetView, clearSubtasks}

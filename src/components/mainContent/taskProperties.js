@@ -61,6 +61,10 @@ const generateTaskTitle = (parent) =>{
 
 const generateTaskNotes = (parent) =>{
     const div = document.createElement('div');
+    const span = document.createElement('span');
+    span.classList.add('notes-title');
+    span.textContent = 'NOTES'
+    div.appendChild(span);
     div.classList.add('task-properties-textarea-container');
 
     const textarea = document.createElement('textarea');
@@ -77,6 +81,12 @@ const generateSubtasks = (parent) =>{
     const subtaskContaienr = document.createElement('div');
     subtaskContaienr.classList.add("task-properties-subtask-container");
 
+    const span = document.createElement('span');
+    span.classList.add('notes-title');
+    span.textContent = 'SUBTASKS'
+
+    subtaskContaienr.appendChild(span);
+
     const subtaskContainerHolder = document.createElement('div');
     subtaskContainerHolder.classList.add('task-properties-subtask-div');
 
@@ -84,7 +94,6 @@ const generateSubtasks = (parent) =>{
     inputDiv.classList.add('task-properties-subtasks-input-div')
 
     const checkbox = document.createElement('button');
-
     checkbox.classList.add('task-properties-subtasks-checkbox');
 
     const input = document.createElement('button');
@@ -100,4 +109,13 @@ const generateSubtasks = (parent) =>{
     parent.appendChild(subtaskContaienr);
 }   
 
-export{generateTaskProperties}
+const checkboxListener = (item) =>{
+    item.addEventListener('click', (e) =>{
+        item.parentNode.classList.add('task-done');
+        setTimeout(function(){
+            item.parentNode.remove();
+        },500)
+    })
+}
+
+export{generateTaskProperties, checkboxListener}

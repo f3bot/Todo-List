@@ -69,13 +69,21 @@ const toggleTaskStatus = (taskTitle, taskRenderer) => {
                     if (projectArray[i].slaveTasks[j].done) {
                         projectArray[i].slaveTasks[j].done = false;
                         taskRenderer.childNodes[j].classList.remove('task-done');
-                        taskRenderer.childNodes[j].classList.add('active');
-                        console.log(taskRenderer.childNodes[j].textContent);
+
+                        for(let k = 0; k < taskRenderer.childNodes.length; k++){
+                            if(taskRenderer.childNodes[k].textContent == projectArray[i].slaveTasks[j].title){
+                                taskRenderer.childNodes[k].childNodes[0].checked = false;
+                            }
+                        }
                     } else {
                         projectArray[i].slaveTasks[j].done = true;
                         taskRenderer.childNodes[j].classList.add('task-done');
-                        taskRenderer.childNodes[j].classList.add('active');
-                        console.log(taskRenderer.childNodes[j]);
+                        
+                        for(let k = 0; k < taskRenderer.childNodes.length; k++){
+                            if(taskRenderer.childNodes[k].textContent == projectArray[i].slaveTasks[j].title){
+                                taskRenderer.childNodes[k].childNodes[0].checked = true;
+                            }
+                        }
                     }
                 }
             }

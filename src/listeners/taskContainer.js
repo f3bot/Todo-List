@@ -38,13 +38,32 @@ const addTaskDivListener = (item) =>{
 }
 
 const checkboxListener = (item) =>{
-    const taskTitle = document.querySelector('.task-properties-title');
+    const taskTitle = document.querySelector('.task-div-title');
     const taskRenderer = document.querySelector('.main-task-container-renderer');
 
 
     item.addEventListener('click', (e) =>{
-        toggleTaskStatus(taskTitle,taskRenderer)
+        let currentDiv = item.parentNode;
+        let childrenArray = Array.from(item.parentNode.parentNode.childNodes).indexOf(currentDiv);
 
+        //console.log(currentDiv);
+        //console.log(childrenArray);
+
+
+        for(let i = 0; i < projectArray.length; i++){
+            if(getCurrentProject() == projectArray[i].title){
+                if(!projectArray[i].slaveTasks[childrenArray].done){
+                    projectArray[i].slaveTasks[childrenArray].done = true;
+                    currentDiv.classList.add('task-done');
+                }else{
+                    projectArray[i].slaveTasks[childrenArray].done = false;
+                    currentDiv.classList.remove('task-done');
+                }
+
+                console.log(projectArray[i].slaveTasks[childrenArray].title);
+                console.log(projectArray[i].slaveTasks[childrenArray].done);
+            }
+        }
     })
 }
 

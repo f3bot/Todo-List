@@ -16,19 +16,22 @@ const renderTasks = (item) =>{
             for(let j = 0; j < projectArray[i].slaveTasks.length; j++){
                 const div = document.createElement('div');
                 div.classList.add('task-div');
-                if(projectArray[i].slaveTasks[j].done == true){
-                    div.classList.add('task-done')
-                }
 
                 const checkbox = document.createElement('input');
                 checkbox.type = 'checkbox';
                 checkbox.role = 'checkbox';
 
                 checkboxListener(checkbox);
+
+                if(projectArray[i].slaveTasks[j].done == true){
+                    div.classList.add('task-done')
+                    checkbox.checked = true;
+                }
                 
     
                 const span = document.createElement('span');
                 span.textContent = projectArray[i].slaveTasks[j].title
+                span.classList.add('task-div-title')
 
                 
 
@@ -63,6 +66,7 @@ const renderNewlyCreatedTask = (parent, input) =>{
     checkboxListener(checkbox)
                 
     const span = document.createElement('span');
+    span.classList.add('task-div-title');
     span.textContent = input.value
 
 
