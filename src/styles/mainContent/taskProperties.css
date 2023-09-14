@@ -26,9 +26,31 @@
 }
 
 .task-properties-button-div img{
-    height: 1.25vw;
-    width: 1.25vw;
-    fill: #afafaf;
+    height: 20px;
+    width: 20px;
+    cursor: pointer;
+}
+
+.task-properties-button-div img:hover{
+    transform: scale(1.15);
+    transition: 0.6s;
+}
+
+.task-properties-button-div img:not(:hover){
+    transform: scale(1);
+    transition: 0.6s
+}
+
+.prio-clicked{
+    filter: brightness(0) saturate(100%) invert(90%) sepia(88%) saturate(7380%) hue-rotate(10deg) brightness(102%) contrast(102%);
+}
+
+.done-clicked{
+    filter: brightness(0) saturate(100%) invert(80%) sepia(0%) saturate(148%) hue-rotate(298deg) brightness(77%) contrast(94%);
+}
+
+.task-important{
+    border-bottom: 1px solid rgb(255, 196, 0);
 }
 
 .task-properties-title{

@@ -25,6 +25,7 @@ const priorityBtn = () =>{
                 }
             }
         }
+        priorityBtn.classList.toggle('prio-clicked');
 
 
     })
@@ -99,6 +100,7 @@ const doneBtn = () => {
 
     doneBtn.addEventListener('click', (e) => {
         toggleTaskStatus(taskTitle, taskRenderer);
+        doneBtn.classList.toggle('done-clicked');
     });
 };
 
