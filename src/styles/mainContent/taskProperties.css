@@ -42,7 +42,7 @@
 }
 
 .prio-clicked{
-    filter: brightness(0) saturate(100%) invert(90%) sepia(88%) saturate(7380%) hue-rotate(10deg) brightness(102%) contrast(102%);
+    filter: brightness(0) saturate(100%) invert(76%) sepia(97%) saturate(2219%) hue-rotate(357deg) brightness(100%) contrast(108%);
 }
 
 .done-clicked{
@@ -56,7 +56,7 @@
 .task-properties-title{
     margin-left: 3%;
     margin-right: 3%;
-    font-size: 24px;
+    font-size: 20px;
     font-weight: bold;
 }
 
@@ -67,6 +67,10 @@
      margin: 3%;
 }
 
+.task-properties-textarea-container span{
+    font-size: 10px;
+}
+
 .task-properties-text-area{
     
     scrollbar-width: thin;
@@ -74,6 +78,7 @@
     height: 100%;
     resize: none;
     border: none;
+    font-size: 13px;
 }
 
 .task-properties-text-area:focus{
@@ -83,22 +88,28 @@
 }
 
 .task-properties-subtask-container{
-    border: 1px solid black;
-    margin-top: 1.5%;
+    margin-top: 5%;
     margin-left: 3%;
     margin-right: 3%;
     display: flex;
     flex-direction: column;
+    overflow: auto;
 
+}
+
+.task-properties-subtask-container span{
+    font-size: 10px;
 }
 
 .task-properties-subtask-div{
     flex-grow: 1;
     display: flex;
+    gap: 12px;
     flex-direction: column;
 }
 
 .task-properties-subtasks-input-div{
+    margin-top: 14px;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -106,9 +117,33 @@
     gap: .35vw;
 }
 
+.notes-title{
+    margin-top: 3%;
+    margin-bottom: 3%;
+}
+
+.subtasks-title-div{
+    display: flex;
+    width: 90%;
+    gap: .35vw;
+
+    align-items: center;
+    margin-left: 10px;
+}
+
+.add-subtask-input{
+    outline: none;
+    border: none;
+}
+
+.subtasks-title-div span{
+    text-align: center;
+    font-size: 12px;
+}
+
 .task-properties-subtasks-checkbox{
-    height: 1.1vw;
-    width: 1.1vw;
+    height: 14px;
+    width: 14px;
     border: 1px solid #afafaf;
     background-color: #fff;
     border-radius: 50%;

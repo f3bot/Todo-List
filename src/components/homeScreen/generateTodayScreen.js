@@ -10,6 +10,7 @@ const generateToday = ( ) =>{
 
     document.body.appendChild(container);
 
+    //generateButton();
 
 }
 
@@ -138,7 +139,9 @@ const clearMainScreen = () =>{
         todayContainer.removeChild(todayContainer.firstChild);
     }
 
-    todayButton.remove();
+    if(todayButton != null){
+        todayButton.remove();
+    }
 }
 
 export{generateToday, clearMainScreen, renderToday}

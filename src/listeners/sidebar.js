@@ -77,7 +77,9 @@ const changeViewListener = () =>{
             clearContainer();
             button.classList.remove('not-visible');
             renderTasks(element);
-            animationButton.classList.add('ihatethisproject');
+            if(animationButton != null){
+                animationButton.classList.add('ihatethisproject');
+            }
         });
     });
     

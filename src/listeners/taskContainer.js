@@ -24,7 +24,7 @@ const addTaskListener = () =>{
 const addTaskDivListener = (item) =>{
     const spanTarget = document.querySelector('.task-properties-title');
     const taskPropertiesContainer = document.querySelector('.main-task-properties');
-
+    const priorityBtn = document.querySelector('.task-properties-priority');
 
     item.addEventListener('click', (e) =>{
         spanTarget.textContent = item.textContent;
@@ -32,6 +32,8 @@ const addTaskDivListener = (item) =>{
         if(taskPropertiesContainer.classList.contains('not-visible')){
             taskPropertiesContainer.classList.remove('not-visible')
         }
+
+        console.log("Here")
 
         renderSubtasks(item);
     })

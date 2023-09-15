@@ -27,10 +27,6 @@ const renderTasks = (item) =>{
                     div.classList.add('task-done')
                     checkbox.checked = true;
                 }
-
-                if(projectArray[i].slaveTasks[j].priority){
-                    div.classList.add('task-important')
-                }
                 
     
                 const span = document.createElement('span');

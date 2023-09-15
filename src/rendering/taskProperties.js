@@ -6,6 +6,8 @@ const renderSubtasks = (item) =>{
     
     const container = document.querySelector('.task-properties-subtask-div');
     const titleSpan = document.querySelector('.task-properties-title');
+    const prioButton = document.querySelector('.task-properties-priority');
+    const doneButton = document.querySelector('.task-properties-done');
 
     clearSubtasks();
 
@@ -14,6 +16,16 @@ const renderSubtasks = (item) =>{
         if(getCurrentProject() == projectArray[i].title){
             for(let j = 0; j < projectArray[i].slaveTasks.length; j++){
                 if(projectArray[i].slaveTasks[j].title == item.textContent || projectArray[i].slaveTasks[j].title == item.title){
+                    if(projectArray[i].slaveTasks[j].priority ){
+                        prioButton.classList.add('prio-clicked');
+                    }else{
+                        prioButton.classList.remove('prio-clicked')
+                    }
+                    if(projectArray[i].slaveTasks[j].done){
+                        doneButton.classList.add('done-clicked');
+                    }else{
+                        doneButton.classList.remove('done-clicked');
+                    }
                     titleSpan.textContent = projectArray[i].slaveTasks[j].title;
                     renderNotes(projectArray[i].slaveTasks[j].notes);
                     for(let k = 0; k < projectArray[i].slaveTasks[j].subtasks.length; k++){

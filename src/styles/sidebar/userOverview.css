@@ -1,16 +1,16 @@
 .sidebar-user-overview{
     width: 86%;
     margin-left: 7%;
-    margin-top: 10%;
+    margin-top: 25px;
     display: flex;
-    gap: .75vw;
+    gap: .35vw;
     padding-bottom: 2%;
     border-bottom: 1px solid #c3c3c3;
 }
 
 .sidebar-user-overview img{
-    width: 2.75vw;
-    height: 2.75vw;
+    width: 2.25vw;
+    height: 2.25vw;
     border-radius: 50%;
     border: 1px solid #afafaf;   
     -webkit-box-shadow: 0px 0px 24px -10px rgba(66, 68, 90, 1);
@@ -19,11 +19,12 @@
 }
 
 .sidebar-user-overview span{
+    font-size: 14px;
     font-weight: bold;
 }
 
 .sidebar-user-overview p {
-    font-size: 12px;
+    font-size: 10px;
     color: #959595;
 }
 

@@ -19,6 +19,7 @@ const addNewSubtaskListener = () =>{
         checkboxListener(checkbox);
 
         const input = document.createElement('input');
+        input.classList.add('add-subtask-input');
         input.type = 'text';
         addInputListener(input, newDiv);
 

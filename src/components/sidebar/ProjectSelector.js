@@ -38,10 +38,15 @@ const generateForm = () =>{
     closeBtn.classList.add('form-close-btn');
     closeBtn.textContent = '✕'
     
+    const TitleInputDiv = document.createElement('div');
+    TitleInputDiv.classList.add('title-input-div');
+
     const titleInput = document.createElement('input');
     titleInput.type = 'text';
     titleInput.classList.add('form-add-project-input')
     titleInput.placeholder = 'Add your task here';
+
+    TitleInputDiv.appendChild(titleInput)
 
     const addProjectButtonDiv = document.createElement('div')
     addProjectButtonDiv.classList.add('form-add-project-btn-div')
@@ -55,7 +60,7 @@ const generateForm = () =>{
     addProjectButtonDiv.appendChild(addProjectForm);
 
     container.appendChild(closeBtnDiv);
-    container.appendChild(titleInput);
+    container.appendChild(TitleInputDiv);
     container.appendChild(addProjectButtonDiv);
 
     document.body.appendChild(container);

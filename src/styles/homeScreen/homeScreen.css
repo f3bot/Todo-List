@@ -23,13 +23,14 @@
 }
 
 .today-active-projects span{
-    font-size: 1rem;
+    font-size: 0.75rem;
+    font-weight: bold;
 }
 
 .today-span-hero{
     font-weight: bold;
 
-    font-size: 1.65rem;
+    font-size: 1.35rem;
 }
 
 .today-span-hero span{
@@ -38,7 +39,7 @@
 
 .today-span-hero-2{
     font-weight: bold;
-    font-size: 1.15rem;
+    font-size: 0.85rem;
     color: #cacaca;
 }
 
@@ -58,17 +59,17 @@
 }
 
 .date-display-day{
-    font-size: 1.25rem;
+    font-size: 1rem;
     color: #909090;
 }
 
 .date-display-number{
-    font-size: 2.75rem;
+    font-size: 2.55rem;
     font-weight: bold;
 }
 
 .date-display-month{
-    font-size: 0.75rem;
+    font-size: 0.5rem;
     color: #cfcfcf;
 }
 
@@ -77,8 +78,8 @@
     position: fixed;
     bottom: -25%;
     left: 45%;
-    width: 25rem;
-    height: 25rem;
+    width: 18rem;
+    height: 18rem;
     background-color: rgb(0, 115, 255);
     border-radius: 50%;
 }

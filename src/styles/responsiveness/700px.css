@@ -153,4 +153,9 @@
         height: 35% !important;
 
     }
+    
+    .today-next-button{
+        left: 17% !important;
+        bottom: -15% !important;
+    }
 }

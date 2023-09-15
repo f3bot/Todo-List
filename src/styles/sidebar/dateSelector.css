@@ -11,9 +11,26 @@
     display: flex;
     align-items: center;
     gap: .5vw;
+    cursor: pointer;
+}
+
+.sidebar-date-container div:hover{
+    transform: scale(1.02);
+    transition: ease 0.5s
+}
+
+.sidebar-date-container div:not(:hover){
+    transform: scale(1);
+    transition: ease 0.5s;
+}
+
+.sidebar-date-container span{
+    font-size: 13px;
+    cursor: pointer;
+    color: rgba(0, 0, 0, 0.9);
 }
 
 .sidebar-date-container img{
-    height: 1vw;
-    width: 1vw;
+    height: 13px;
+    width: 13px;
 }
